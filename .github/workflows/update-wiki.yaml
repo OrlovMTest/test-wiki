@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-        repository: ${{github.repository}}.wiki
+          repository: ${{github.repository}}.wiki
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
