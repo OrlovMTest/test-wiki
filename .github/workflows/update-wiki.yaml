@@ -8,11 +8,11 @@ on:
     branches:
       - master
 jobs:
-- name: Checkout wiki code
+  Checkout:
   uses: actions/checkout@v2
   with:
     repository: ${{github.repository}}.wiki
-- name: Push to wiki
+  Push:
   run: |
     git config --local user.email "action@github.com"
     git config --local user.name "GitHub Action"
