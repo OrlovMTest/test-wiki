@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - master
-
+jobs:
 - name: Checkout wiki code
   uses: actions/checkout@v2
   with:
