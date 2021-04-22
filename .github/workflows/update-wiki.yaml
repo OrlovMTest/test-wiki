@@ -25,6 +25,7 @@ jobs:
       - name: Push to wiki
         run: |
           cd wiki
+          echo `cat Home.md`
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
