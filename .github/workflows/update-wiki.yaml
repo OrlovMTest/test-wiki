@@ -14,9 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          repository: ${{github.repository}}.wiki
       - run: |
+          cd wiki
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
