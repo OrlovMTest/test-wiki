@@ -7,13 +7,17 @@ on:
   pull_request:
     branches:
       - master
+
+
 jobs:
-  UpdateWiki:
-  uses: -actions/checkout@v2
-  with:
-    repository: ${{github.repository}}.wiki
-  run: |
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    git add .
-    git diff-index --quiet HEAD || git commit -m "Add changes" && git push
+  updateWiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+        repository: ${{github.repository}}.wiki
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Add changes" && git push
