@@ -26,6 +26,6 @@ jobs:
           cd temp
           echo `cat Home.md`
           git config --local user.email "orlovmtest@yandex.ru"
-          git config --local user.name "OrlovMTest"
+          git config --local user.name "${{GITHUB_ACTOR}}"
           git add .
           git diff-index --quiet HEAD || git commit -m "Add changes" && git push
