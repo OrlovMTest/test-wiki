@@ -25,7 +25,7 @@ jobs:
           cp -r wiki/. temp
           cd temp
           echo `cat Home.md`
-          git config --local user.email "orlov@email.com"
-          git config --local user.name "OrlovM"
+          git config --local user.email "orlovmtest@yandex.ru"
+          git config --local user.name "OrlovMTest""
           git add .
           git diff-index --quiet HEAD || git commit -m "Add changes" && git push
