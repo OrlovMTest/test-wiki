@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout base code
         uses: actions/checkout@v2
-        with:
-          path: base-code
       - name: Checkout wiki code
         uses: actions/checkout@v2
         with:
@@ -24,10 +22,10 @@ jobs:
           path: temp
       - name: Push to wiki
         run: |
-          cp -r base-code/wiki/. temp
+          cp -r wiki/. temp
           cd temp
           echo `cat Home.md`
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "orlov@email.com"
+          git config --local user.name "OrlovM"
           git add .
           git diff-index --quiet HEAD || git commit -m "Add changes" && git push
