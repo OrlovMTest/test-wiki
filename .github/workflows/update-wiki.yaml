@@ -28,4 +28,4 @@ jobs:
           git config --local user.email $ae
           git config --local user.name $an
           git add .
-          git diff-index --quiet HEAD || git commit -m $message && git push
+          git diff-index --quiet HEAD || git commit -m "$message" && git push
