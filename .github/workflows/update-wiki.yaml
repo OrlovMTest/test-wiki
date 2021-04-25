@@ -16,5 +16,6 @@ jobs:
     - uses: OrlovM/Wiki-Action@v0.1.10
       with:
         path: 'wiki'
-        tpken: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+          
 
