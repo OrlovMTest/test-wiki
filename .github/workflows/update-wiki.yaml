@@ -13,12 +13,7 @@ jobs:
     steps:
     - name: Checkout base code
       uses: actions/checkout@v2
-    - name: Checkout wiki code
-      uses: actions/checkout@v2
-      with:
-        repository: ${{github.repository}}.wiki
-        path: wiki-repo
-    - uses: OrlovM/Wiki-Action@v0.1.3
+    - uses: OrlovM/Wiki-Action@v0.1.4
       with:
         path: 'wiki'
 
