@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Update wiki
     steps:
-    - uses: ./OrlovM/Wiki-Action@v0.1.1
+    - name: Checkout base code
+      uses: actions/checkout@v2
+    - name: Checkout wiki code
+      uses: actions/checkout@v2
+      with:
+        repository: ${{github.repository}}.wiki
+        path: wiki-repo
+    - uses: https://github.com/OrlovM/Wiki-Actionv0.1.1
       with:
         path: 'wiki'
+
