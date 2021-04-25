@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Checkout base code
       uses: actions/checkout@v2
-    - uses: OrlovM/Wiki-Action@v0.1.10
+    - uses: OrlovM/Wiki-Action@v0.1.11
       with:
         path: 'wiki'
         token: ${{ secrets.GITHUB_TOKEN }}
