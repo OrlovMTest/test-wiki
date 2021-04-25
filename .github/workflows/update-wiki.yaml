@@ -7,25 +7,10 @@ on:
     branches:
       - master
 jobs:
-  updateWiki:
+  update-wiki:
     runs-on: ubuntu-latest
+    name: Update wiki
     steps:
-      - name: Checkout base code
-        uses: actions/checkout@v2
-      - name: Checkout wiki code
-        uses: actions/checkout@v2
-        with:
-          repository: ${{github.repository}}.wiki
-          path: temp
-      - name: Push to wiki
-        run: |
-          an=`git log -1 --format="%an"`
-          ae=`git log -1 --format="%ae"`
-          message=`git log -1 --format="%s"`
-          cp -r wiki/. temp
-          cd temp
-          echo `cat Home.md`
-          git config --local user.email $ae
-          git config --local user.name $an
-          git add .
-          git diff-index --quiet HEAD || git commit -m "$message" && git push
+    - uses: https://github.com/OrlovM/Wiki-Action@v0
+      with:
+        path: 'wiki'
