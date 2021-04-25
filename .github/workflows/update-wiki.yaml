@@ -18,7 +18,7 @@ jobs:
       with:
         repository: ${{github.repository}}.wiki
         path: wiki-repo
-    - uses: https://github.com/OrlovM/Wiki-Actionv0.1.1
+    - uses: OrlovM/Wiki-Actionv0.1.1
       with:
         path: 'wiki'
 
